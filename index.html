@@ -1,1 +1,282 @@
-<b>Hello World</b>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8"/>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:300,500|Roboto:300|Lato:300,400' rel='stylesheet' type='text/css'>
+
+<title>New Project</title>
+
+<link rel="stylesheet" type="text/css" href="../stylesheets/convo-style.css">
+    
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+var empty = true;
+
+$( function() {
+    
+    $('.contentbox').on('click', function() {
+        $("#container").css({"-webkit-transform":"scale(0.1, 0.1)"});
+    });
+        
+});
+    
+function loadTopic(elem) {
+    var topic = elem.getAttribute("data-topic");
+    $(".frtopicbox").removeClass("selected");
+    $(elem).addClass("selected");
+    $(".contentbox").fadeOut(200);
+    $(".loader").fadeIn(300);
+    $.ajax({
+            type: 'GET',
+            url: "../cgi-bin/CallSearch.py",
+            data: { 'q' : topic }, //passing some input here
+            dataType: "html",
+            //contentType: "application/json; charset=utf-8",
+            success: function(response){
+                //output = response;
+                //alert(response);
+                console.log("Responded Topic");
+                console.log(response);
+                $(".container").html(response);
+                $(".contentbox").css({"display":"none"});
+                $(".contentbox").fadeIn(200);
+                $(".loader").fadeOut(80);
+            }
+        }).done(function(data){
+            //console.log(data);
+            //alert(data);
+        });
+}
+    
+function openTopic() {
+    if (empty) {
+        empty = false;
+        $(".frtopicbox").first().click();
+    }
+}
+
+function addToConvo(resp) {
+    var convoID = "d4ae3655290";
+    resp = resp + "<p class='convo_id'>" + convoID + "</p>12345";
+
+    $.ajax({
+            type: 'POST',
+            url: "../scripts/topicToConvo.php",
+            data: { 'top' : resp }, //passing some input here
+            dataType: "html",
+            //contentType: "application/json; charset=utf-8",
+            success: function(response){
+                //output = response;
+                //alert(response);
+                console.log("Adding Topics");
+                console.log(response);
+            }
+        }).done(function(data){
+            //console.log(data);
+            //alert(data);
+        });
+}
+
+</script>
+</head>
+    
+<body>
+
+<div class="left">
+    <div class="nav">
+        
+    </div>
+    <div class="infobox">
+        
+        
+        <div class="sidestartbox">
+        <div class="rings">
+            <div class="first-ring stopped" id="first-ring">
+                <div class="second-ring stopped" id="second-ring">
+                </div>
+            </div>
+        </div>
+            
+            <p class="start" id="button-play-ws">Start Listening</p>
+            <p class="stop" id="button-stop-ws">Stop Listening</p>
+        </div>
+    </div>
+    
+</div> <!-- left -->
+    
+<div class="right">
+    <div class="emptystart">
+        <div id="transcription"></div>
+    </div>
+
+    <img src="../images/loading.GIF" class="loader" />
+
+    <div id="container" class="container" > 
+        
+    </div> <!-- container -->
+        
+    <script>
+         // Test browser support
+         window.SpeechRecognition = window.SpeechRecognition        ||
+                                    window.webkitSpeechRecognition  ||
+                                    null;
+         if (window.SpeechRecognition === null) {
+            alert("Speach rec not supported.");
+         } else {
+            var recognizer = new window.SpeechRecognition();
+            var transcription = document.getElementById('transcription');
+            var conta = document.getElementById('container');
+            // Recogniser doesn't stop listening even if the user pauses
+            recognizer.continuous = true;
+            // Start recognising
+            recognizer.onresult = function(event) {
+               transcription.textContent = '';
+               for (var i = event.resultIndex; i < event.results.length; i++) {
+                  if (event.results[i].isFinal) {
+                      transcription.textContent = event.results[i][0].transcript;
+                      //var conf = event.results[i][0].confidence
+                      $.ajax({
+                        type: 'GET',
+                        url: "../cgi-bin/CallTopics.py",
+                        data: { 'q' : transcription.textContent }, //passing some input here
+                        dataType: "html",
+                        //contentType: "application/json; charset=utf-8",
+                        success: function(response){
+                            //output = response;
+                            //alert(response);
+                            console.log("Responded");
+                            console.log(response);
+                            $(".frtopiccont").prepend(response);
+                            openTopic();
+                            addToConvo(response);
+                        }
+                      }).done(function(data){
+                        //console.log(data);
+                        //alert(data);
+                      });
+                  } else {
+                     transcription.textContent += event.results[i][0].transcript;
+                  }
+               }
+            };
+            // Listen for errors
+            recognizer.onerror = function(event) {
+               // 
+            };
+             
+            //recognizer.onend = function(){
+            //    recognizer.start();
+            //}
+
+            document.getElementById('button-play-ws').addEventListener('click', function() {
+               // Set if we need interim results
+               recognizer.interimResults = true;
+               try{
+                   recognizer.start();
+                   $("#first-ring").removeClass("stopped");
+                   $("#second-ring").removeClass("stopped");
+                   $(".start").css({"display":"none"});
+                   $(".stop").css({"display":"block"});
+               } catch(ex) {
+                   //
+               }
+            });
+            document.getElementById('button-stop-ws').addEventListener('click', function() {
+               recognizer.stop();
+                $("#first-ring").addClass("stopped");
+                $("#second-ring").addClass("stopped");
+                $(".start").css({"display":"block"});
+                $(".stop").css({"display":"none"});
+            });
+            
+         }
+    </script>
+</div> <!-- right -->
+    
+<div class="farright">
+    <div class="frcont">
+        <div class="frtitlebox">
+            <p class="frtitle">TOPICS</p>
+        </div>
+        
+            <div class="frtopiccont">
+
+<div class="frtopicbox" data-topic="Ralph Lauren Corporation" onclick="loadTopic(this)">
+            <p class="frtopic">Ralph Lauren Corporation</p>
+            <p class="frtext">Ralph Lauren Corporation (NYSE: RL) is an American, publicly traded holding company headquartered in New York City. The company, through its subsidiaries, designs, markets and...</p>
+         </div><div class="frtopicbox" data-topic="Tommy Hilfiger" onclick="loadTopic(this)">
+            <p class="frtopic">Tommy Hilfiger</p>
+            <p class="frtext">Thomas Jacob "Tommy" Hilfiger (born March 24, 1951) is an American fashion designer and founder of the lifestyle brand Tommy Hilfiger Corporation.
+^ "Profile: Tommy Hilfig...</p>
+         </div><div class="frtopicbox" data-topic="Laferrari" onclick="loadTopic(this)">
+            <p class="frtopic">Laferrari</p>
+            <p class="frtext">LaFerrari (also known by its project name, F150) is a limited production hybrid sports car built by Italian sports car maker Ferrari. The car and its name were officially unve...</p>
+         </div><div class="frtopicbox" data-topic="Porsche 911" onclick="loadTopic(this)">
+            <p class="frtopic">Porsche 911</p>
+            <p class="frtext">The Porsche 911 (pronounced Nine Eleven or German: Neunelf) is a two-door, 2+2 high performance sports car made since 1963 by Porsche AG of Stuttgart, Germany. It has a distin...</p>
+         </div><div class="frtopicbox" data-topic="Porsche 918" onclick="loadTopic(this)">
+            <p class="frtopic">Porsche 918</p>
+            <p class="frtext">The Porsche 918 Spyder is a mid-engined plug-in hybrid sports car designed by Porsche. The Spyder is powered by a normally-aspirated 4.6 liter V8 engine, developing 608 horsep...</p>
+         </div><div class="frtopicbox" data-topic="Car And Driver" onclick="loadTopic(this)">
+            <p class="frtopic">Car And Driver</p>
+            <p class="frtext">Car and Driver (CD or C/D) is an American automotive enthusiast magazine. Its total circulation is 1.23 million. It is owned by Hearst Magazines, who purchased prior owner Hac...</p>
+         </div><div class="frtopicbox" data-topic="Top Gear 2002 Tv Series" onclick="loadTopic(this)">
+            <p class="frtopic">Top Gear 2002 Tv Series</p>
+            <p class="frtext">Top Gear is a British television series about motor vehicles, primarily cars, that is the most widely watched factual television programme in the world. It began in 1977 as a ...</p>
+         </div><div class="frtopicbox" data-topic="List Of Top Gear Episodes" onclick="loadTopic(this)">
+            <p class="frtopic">List Of Top Gear Episodes</p>
+            <p class="frtext">This list of Top Gear episodes consists of episodes from the 2002 format of the BBC television series Top Gear, conceived by Jeremy Clarkson and Andy Wilman. The show is prese...</p>
+         </div><div class="frtopicbox" data-topic="Univers" onclick="loadTopic(this)">
+            <p class="frtopic">Univers</p>
+            <p class="frtext">Univers (French pronunciation: ​[ynivɛʁ], "ünivair") is the name of a sans-serif typeface designed by Adrian Frutiger in 1954. Classified as a neo-grotesque typeface, o...</p>
+         </div><div class="frtopicbox" data-topic="Quantum Gravity" onclick="loadTopic(this)">
+            <p class="frtopic">Quantum Gravity</p>
+            <p class="frtext">Quantum gravity (QG) is a field of theoretical physics that seeks to describe the force of gravity according to the principles of quantum mechanics.
+The current understanding...</p>
+         </div><div class="frtopicbox" data-topic="Classical Mechanics" onclick="loadTopic(this)">
+            <p class="frtopic">Classical Mechanics</p>
+            <p class="frtext">In physics, classical mechanics and quantum mechanics are the two major sub-fields of mechanics. Classical mechanics is concerned with the set of physical laws describing the ...</p>
+         </div><div class="frtopicbox" data-topic="Gravitation Manga" onclick="loadTopic(this)">
+            <p class="frtopic">Gravitation Manga</p>
+            <p class="frtext">Gravitation (Japanese: グラビテーション, Hepburn: Gurabitēshon) is a yaoi manga series written and illustrated by Maki Murakami. The story follows the attempts of Shu...</p>
+         </div><div class="frtopicbox" data-topic="Theory Of Relativity" onclick="loadTopic(this)">
+            <p class="frtopic">Theory Of Relativity</p>
+            <p class="frtext">The theory of relativity, or simply relativity in physics, usually encompasses two theories by Albert Einstein: special relativity and general relativity.
+Concepts introduced...</p>
+         </div><div class="frtopicbox" data-topic="Newtons Laws Of Motion" onclick="loadTopic(this)">
+            <p class="frtopic">Newtons Laws Of Motion</p>
+            <p class="frtext">Newton's laws of motion are three physical laws that together laid the foundation for classical mechanics. They describe the relationship between a body and the forces acting...</p>
+         </div><div class="frtopicbox" data-topic="Quantum Mechanics" onclick="loadTopic(this)">
+            <p class="frtopic">Quantum Mechanics</p>
+            <p class="frtext">Quantum mechanics (QM; also known as quantum physics, or quantum theory) is a fundamental branch of physics which deals with physical phenomena at nanoscopic scales, where the...</p>
+         </div><div class="frtopicbox" data-topic="Newtons Law Of Universal Gravitation" onclick="loadTopic(this)">
+            <p class="frtopic">Newtons Law Of Universal Gravitation</p>
+            <p class="frtext">Newton's law of universal gravitation states that any two bodies in the universe attract each other with a force that is directly proportional to the product of their masses ...</p>
+         </div><div class="frtopicbox" data-topic="Gravity" onclick="loadTopic(this)">
+            <p class="frtopic">Gravity</p>
+            <p class="frtext">Gravity or gravitation is a natural phenomenon by which all things attract one another including stars, planets, galaxies and even light and sub-atomic particles. Gravity is r...</p>
+         </div><div class="frtopicbox" data-topic="Introduction To Quantum Mechanics" onclick="loadTopic(this)">
+            <p class="frtopic">Introduction To Quantum Mechanics</p>
+            <p class="frtext">Quantum mechanics is the science of the very small: the body of scientific principles that explains the behaviour of matter and its interactions with energy on the scale of at...</p>
+         </div>
+            </div>
+    </div> <!-- frcont -->
+</div> <!-- farright -->
+    
+<div class="related">
+    <div class="reltitlebox">
+        <p class="reltitle">EXPLORE RELATED</p>
+    </div>
+</div>
+    
+</body>
+
+</html>
