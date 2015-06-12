@@ -167,14 +167,34 @@ hr {
 }
 
 #specialfrontsection {
+	width: 825px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.projectwrapper {
+	background-color: black;
+    opacity: 0;
 	width: 100%;
-	height: 150px;
-	margin: 30px;
+	height: 100%;
+	-o-transition:.2s;
+  	-ms-transition:.2s;
+  	-moz-transition:.2s;
+  	-webkit-transition:.2s;
+  	transition:.2s;
+  	display: inline-block;
+  	border-radius: 5px;
+}
+
+.projectwrapper:hover {
+	opacity: 0.7;
 }
 
 .projects {
 	width: 250px;
 	height: 250px;
+	margin: 10px;
+	border-radius: 5px;
 }
 
 #project1 {
@@ -182,4 +202,33 @@ hr {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
+}
+
+#project2 {
+	background-image: url("images/maps.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: inline-block;
+}
+
+#project3 {
+	background-image: url("images/maps.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: inline-block;
+}
+
+.innerproject {
+	width: 100%;
+	height: 50px;
+	color: white;
+	text-align: center;
+	font-size: 45px;
+	font-style: bolder;
+}
+
+.projectlinks {
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
 }
