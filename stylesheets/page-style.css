@@ -244,3 +244,44 @@ hr {
 	width: 100%;
 	background-color: #1d1d1d;
 }
+
+#contactme {
+	color: white;
+}
+
+#contactwrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#contacttext {
+	line-height: 100px;
+	font-size: 30px;
+	font-weight: normal;
+	margin-left: 90px;
+}
+
+#contactbutton {
+	height: 60px;
+	width: 150px;
+	background-color: white;
+	float: right;
+	position: relative;
+	bottom: 110px;
+	right: 100px;
+	color:black;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 3px;
+	-o-transition:.2s;
+  	-ms-transition:.2s;
+  	-moz-transition:.2s;
+  	-webkit-transition:.2s;
+  	transition:.2s;
+  	font-size: 20px;
+}
+
+#contactbutton:hover {
+	-webkit-filter: invert(1);
+   filter: invert(1);
+}
