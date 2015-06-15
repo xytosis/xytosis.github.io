@@ -73,7 +73,7 @@ hr {
 }
 
 #headerbuttons {
-	width: 460px;
+	width: 340px;
 	height: 100px;
 	margin: 0 auto;
 	margin-top: 120px;
@@ -243,6 +243,7 @@ hr {
 	height: 300px;
 	width: 100%;
 	background-color: #1d1d1d;
+	text-align: center;
 }
 
 #contactme {
@@ -250,6 +251,7 @@ hr {
 }
 
 #contactwrapper {
+	max-width: 1000px;
 	width: 80%;
 	margin: 0 auto;
 }
@@ -284,4 +286,59 @@ hr {
 #contactbutton:hover {
 	-webkit-filter: invert(1);
    filter: invert(1);
+}
+
+#bottomlinks {
+	width: 420px;
+	margin: 0 auto;
+	top: 80px;
+	position: relative;
+}
+
+#legal {
+	color: white;
+	width: 280px;
+	margin: 0 auto;
+	line-height: 200px;
+	font-size: 12px;
+	color: #a3a3a3;
+	height: 100px;
+}
+
+#bottombuttons {
+	height: 100px;
+	margin-top: 40px;
+}
+
+#github2 {
+	width: 20px;
+	height: 20px;
+	background-image: url("images/github.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#medium2 {
+	width: 20px;
+	height: 20px;
+	background-image: url("images/medium.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#linkedin2 {
+	width: 20px;
+	height: 20px;
+	background-image: url("images/linkedin.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
 }
