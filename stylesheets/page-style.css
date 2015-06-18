@@ -198,21 +198,42 @@ hr {
 }
 
 #project1 {
-	background-image: url("images/maps.png");
+	background-image: url("images/maps/maps1.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #project2 {
-	background-image: url("images/maps.png");
+	background-image: url("images/swipey/swipe1.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #project3 {
-	background-image: url("images/maps.png");
+	background-image: url("images/headerimage.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: inline-block;
+}
+
+#project4 {
+	background-image: url("images/headerimage.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: inline-block;
+}
+
+#project5 {
+	background-image: url("images/headerimage.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: inline-block;
+}
+
+#project6 {
+	background-image: url("images/headerimage.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
@@ -223,7 +244,7 @@ hr {
 	height: 50px;
 	color: white;
 	text-align: center;
-	font-size: 45px;
+	font-size: 30px;
 	font-style: bolder;
 }
 
@@ -261,6 +282,10 @@ hr {
 	font-size: 30px;
 	font-weight: normal;
 	margin-left: 90px;
+}
+
+#cont {
+	line-height: 18px;
 }
 
 #contactbutton {

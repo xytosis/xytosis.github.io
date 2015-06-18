@@ -144,9 +144,7 @@ hr {
 img {
 	width: 80%;
 	max-width: 1000px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
+	
 	margin-top: 40px;
 }
 
@@ -161,7 +159,7 @@ img {
 	width: 80%;
 	max-width: 1000px;
 	margin: 0 auto;
-	font-weight: bold;
+	font-weight: lighter;
 }
 
 #contactme {
@@ -192,6 +190,10 @@ img {
 	font-size: 30px;
 	font-weight: normal;
 	margin-left: 90px;
+}
+
+#cont {
+	line-height: 18px;
 }
 
 #contactbutton {
