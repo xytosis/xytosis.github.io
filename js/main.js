@@ -1,9 +1,16 @@
 /* This script will contain formatting for main page*/
 
 $(document).ready(function() {
-	$(".headerbutton").css("height", $(".headerbutton").width()+"px");
+	$("#mobilemenu").click(function() {
+		var headerbar = $("#mobilemenubar");
+		if (headerbar.css("visibility") == "visible") {
+			headerbar.css("visibility", "hidden");
+			document.body.style.overflow = "visible";
+		} else {
+			headerbar.css("visibility", "visible");
+			document.body.style.overflow = "hidden";
+		}
+		
+	})
 
-	$("#headerbuttons").css("margin-top", ($("#specialheadertext").height() * 1.5) + "px");
-
-	$("#specialheadertext").css("margin-top", (200 - $("#specialheadertext").height()) + "px");
 });
