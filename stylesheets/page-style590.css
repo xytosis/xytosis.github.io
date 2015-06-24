@@ -184,7 +184,7 @@ hr {
 
 .frontsection {
 	text-align: left;
-	font-size: 120%;
+	font-size: 100%;
 	width: 70%;
 	margin: auto;
 	margin-top: 20px;
@@ -192,7 +192,7 @@ hr {
 }
 
 .sectiontitle {
-	font-size: 200%;
+	font-size: 150%;
 	font-family: Georgia;
 	text-align: center;
 }
@@ -208,9 +208,8 @@ hr {
 }
 
 #specialfrontsection {
-	max-width: 825px;
-	width: 99%;
-	height: 660px;
+	width: 550px;
+	height: 920px;
 	margin: 0 auto;
 }
 
@@ -233,9 +232,8 @@ hr {
 }
 
 .projects {
-	width: 30%;
 	min-width: 250px;
-	height: 35%;
+	height: 250px;
 	margin: 10px;
 	border-radius: 5px;
 }
@@ -324,7 +322,7 @@ hr {
 	line-height: 100px;
 	font-size: 30px;
 	font-weight: normal;
-	margin-left: 90px;
+
 }
 
 #cont {
@@ -338,7 +336,7 @@ hr {
 	float: right;
 	position: relative;
 	bottom: 110px;
-	right: 100px;
+	right: 10px;
 	color:black;
 	text-align: center;
 	font-weight: bolder;
@@ -365,12 +363,13 @@ hr {
 
 #legal {
 	color: white;
-	width: 280px;
-	margin: 0 auto;
-	line-height: 200px;
-	font-size: 12px;
-	color: #a3a3a3;
-	height: 100px;
+	width: 265px;
+	margin-top: 20px;
+	position: relative;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 #bottombuttons {
