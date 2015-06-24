@@ -5,13 +5,11 @@ html, body {
 }
 
 hr {
-	width: 100%;
+	width: 95%;
 	color: #cbcbcb;
 	border: none;
 	height: 1px;
 	background-color: #cbcbcb;
-	margin-left: 30px;
-	margin-right: 30px;
 }
 
 #headerbar {
