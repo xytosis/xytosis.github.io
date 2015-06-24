@@ -65,7 +65,7 @@ hr {
 
 #specialheadertext {
 	font-size: 90%;
-	margin-top: 150px;
+	margin-top: 110px;
 	margin-bottom: -100px;
 	font-weight: normal;
 }
@@ -78,6 +78,9 @@ hr {
 }
 
 .headerbutton {
+	min-width: 40px;
+	min-height: 40px;
+	width: 20%;
 	-o-transition:.2s;
   	-ms-transition:.2s;
   	-moz-transition:.2s;
@@ -86,8 +89,7 @@ hr {
 }
 
 #github {
-	width: 70px;
-	height: 70px;
+	
 	background-image: url("images/github.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -97,8 +99,6 @@ hr {
 }
 
 #medium {
-	width: 70px;
-	height: 70px;
 	background-image: url("images/medium.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -108,8 +108,6 @@ hr {
 }
 
 #linkedin {
-	width: 70px;
-	height: 70px;
 	background-image: url("images/linkedin.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -119,8 +117,6 @@ hr {
 }
 
 #resume {
-	width: 70px;
-	height: 70px;
 	background-image: url("images/resume.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
