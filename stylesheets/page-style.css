@@ -16,7 +16,7 @@ hr {
 	height: 90px;
 	width: 95%;
 	text-align: right;
-	font-size: 20px;
+	font-size: 150%;
 	line-height: 90px;
 	margin: 0 auto;
 }
@@ -59,12 +59,12 @@ hr {
 	margin: 0 auto;
 	text-align: center;
 	font-weight: bolder;
-	font-size: 50px;
+	font-size: 300%;
 	line-height: 100px;
 }
 
 #specialheadertext {
-	font-size: 30px;
+	font-size: 90%;
 	margin-top: 150px;
 	margin-bottom: -100px;
 	font-weight: normal;
