@@ -362,19 +362,20 @@ hr {
 }
 
 #legal {
+	font-size: 80%;
 	color: white;
-	width: 265px;
-	margin-top: 20px;
+	width: 90px;
 	position: relative;
     top: 60%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+    margin: 0 auto;
+    /*transform: translate(-50%, -50%)*/
 }
 
 #bottombuttons {
 	height: 100px;
-	margin-top: 40px;
+	width: 300px;
+	margin: 0 auto;
+	padding-top: 40px;
 }
 
 #github2 {
