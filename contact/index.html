@@ -5,12 +5,16 @@
 <head>
 
 <meta charset="UTF-8"/>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:300,500|Roboto:300|Lato:300,400' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 <title>Martin</title>
 
-<link rel="stylesheet" type="text/css" href="../stylesheets/page-style.css">
+<link rel="stylesheet" media="(min-width : 850px)" type="text/css" href="../stylesheets/page-style850.css">
+<link rel="stylesheet" media="(min-width : 590px) and (max-width: 850px)" type="text/css" href="../stylesheets/page-style590.css">
+<link rel="stylesheet" media="(max-width : 590px)" type="text/css" href="../stylesheets/page-stylemobile.css">
     
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -48,7 +52,7 @@
 	<div id="contactme">
 		<div id="contactwrapper">
 			<p id="contacttext">Like what you see?</p>
-			<a href="/contact"><div id="contactbutton">
+			<a href="/contact" style="text-decoration: none;"><div id="contactbutton">
 				<p id="cont">Contact Me</p>
 			</div></a>
 		</div>
