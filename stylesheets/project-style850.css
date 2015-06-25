@@ -1,0 +1,290 @@
+html, body {
+	width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+	font-family:  "Open sans","Lato", "HelveticaNeue-Light", "Helvetica Neue Light", Arial;
+}
+
+hr {
+	width: 95%;
+	color: #cbcbcb;
+	border: none;
+	height: 1px;
+	background-color: #cbcbcb;
+}
+
+#mobilemenu {
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+#mobilemenubar {
+	visibility: hidden;
+}
+
+#headerbar {
+	height: 90px;
+	width: 95%;
+	text-align: right;
+	font-size: 150%;
+	line-height: 90px;
+	margin: 0 auto;
+	visibility: visible;
+}
+
+#headerimage {
+	width: 100%;
+	height: 800px;
+	background-image: url('images/headerimage.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
+}
+
+#headeroverlay {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.75);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
+
+.headerlink {
+	text-decoration: none;
+	color: white;
+	margin-left: 20px;
+}
+
+.headerlink:hover {
+	opacity: 0.8;
+}
+
+
+#headertext {
+	height: 100px;
+	width: 90%;
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+	font-weight: bolder;
+	font-size: 300%;
+	line-height: 100px;
+}
+
+#specialheadertext {
+	font-size: 90%;
+	margin-top: 50px;
+	margin-bottom: -100px;
+	font-weight: normal;
+}
+
+#headerbuttons {
+	width: 340px;
+	max-width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 120px;
+}
+
+.headerbutton {
+	-o-transition:.2s;
+  	-ms-transition:.2s;
+  	-moz-transition:.2s;
+  	-webkit-transition:.2s;
+  	transition:.2s;
+}
+
+#github {
+	min-width: 70px;
+	min-height: 70px;
+	background-image: url("images/github.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#medium {
+	min-width: 70px;
+	min-height: 70px;
+	background-image: url("images/medium.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#linkedin {
+	min-width: 70px;
+	min-height: 70px;
+	background-image: url("images/linkedin.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#resume {
+	min-width: 70px;
+	min-height: 70px;
+	background-image: url("images/resume.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+.headerbutton:hover {
+	-webkit-filter: invert(1);
+   filter: invert(1);
+}
+
+#space {
+	height: 100px;
+	width: 100%;
+}
+
+img {
+	width: 80%;
+	max-width: 1000px;
+	
+	margin-top: 40px;
+}
+
+.centeredimage {
+	text-align:center;
+    margin-top:0px;
+    margin-bottom:0px;
+    padding:0px;
+}
+
+.projectdesc {
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
+	font-weight: lighter;
+}
+
+#contactme {
+	height: 100px;
+	width: 100%;
+	background-color: #444444;
+}
+
+#bottom {
+	height: 300px;
+	width: 100%;
+	background-color: #1d1d1d;
+	text-align: center;
+}
+
+#contactme {
+	color: white;
+}
+
+#contactwrapper {
+	max-width: 1000px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+#contacttext {
+	line-height: 100px;
+	font-size: 30px;
+	font-weight: normal;
+	margin-left: 90px;
+}
+
+#cont {
+	line-height: 18px;
+}
+
+#contactbutton {
+	height: 60px;
+	width: 150px;
+	background-color: white;
+	float: right;
+	position: relative;
+	bottom: 110px;
+	right: 100px;
+	color:black;
+	text-align: center;
+	font-weight: bolder;
+	border-radius: 3px;
+	-o-transition:.2s;
+  	-ms-transition:.2s;
+  	-moz-transition:.2s;
+  	-webkit-transition:.2s;
+  	transition:.2s;
+  	font-size: 20px;
+}
+
+#contactbutton:hover {
+	-webkit-filter: invert(1);
+   filter: invert(1);
+}
+
+#bottomlinks {
+	width: 420px;
+	margin: 0 auto;
+	top: 80px;
+	position: relative;
+}
+
+#legal {
+	color: white;
+	width: 280px;
+	margin: 0 auto;
+	line-height: 200px;
+	font-size: 12px;
+	color: #a3a3a3;
+	height: 100px;
+}
+
+#bottombuttons {
+	height: 100px;
+	margin-top: 40px;
+}
+
+#github2 {
+	width: 20px;
+	height: 20px;
+	background-image: url("images/github.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#medium2 {
+	width: 20px;
+	height: 20px;
+	background-image: url("images/medium.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}
+
+#linkedin2 {
+	width: 20px;
+	height: 20px;
+	background-image: url("images/linkedin.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 50px;
+	display: inline-block;
+	margin: 20px;
+}

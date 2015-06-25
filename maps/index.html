@@ -5,12 +5,16 @@
 <head>
 
 <meta charset="UTF-8"/>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:300,500|Roboto:300|Lato:300,400' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 
 <title>Martin</title>
-
-<link rel="stylesheet" type="text/css" href="../stylesheets/project-style.css">
+<link rel="stylesheet" media="(min-width : 850px)" type="text/css" href="../stylesheets/project-style850.css">
+<link rel="stylesheet" media="(min-width : 590px) and (max-width: 850px)" type="text/css" href="../stylesheets/project-style590.css">
+<link rel="stylesheet" media="(max-width : 590px)" type="text/css" href="../stylesheets/project-stylemobile.css">
+<!-- <link rel="stylesheet" type="text/css" href="../stylesheets/project-style.css"> -->
     
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -19,16 +23,30 @@
 <body>
 	<div id="headerimage">
 		<div id="headeroverlay">
+			<div id="mobilemenu"></div>
 			<div id="headerbar">
-				<a href="#" class="headerlink">Home</a>
-				<a href="#" class="headerlink">About</a>
+				<a href="/" class="headerlink">Home</a>
+				<a href="about/" class="headerlink">About</a>
 				<a href="#" class="headerlink">Projects</a>
 				<a target="_blank" href="http://xytosis.deviantart.com/" class="headerlink">Art</a>
-				<a href="#" class="headerlink">Contact</a>
+				<a href="contact/" class="headerlink">Contact</a>
+			</div>
+			<div id="mobilemenubar">
+				<div id="fakespace">
+				<a href="/" class="headerlink">Home</a>
+				<div class="fakespacing"></div>
+				<a href="about/" class="headerlink">About</a>
+				<div class="fakespacing"></div>
+				<a href="#" class="headerlink">Projects</a>
+				<div class="fakespacing"></div>
+				<a target="_blank" href="http://xytosis.deviantart.com/" class="headerlink">Art</a>
+				<div class="fakespacing"></div>
+				<a href="contact/" class="headerlink">Contact</a>
+				</div>
 			</div>
 			<div id="headertext">
-				<p id="specialheadertext">Putting SQL, Ajax and Java all together.</p>
-				<p>Maps</p>
+				<p id="specialheadertext">Full stack developer who loves</p>
+				<p>Python, Scala and Data Science</p>
 			</div>
 			<div id="headerbuttons">
 				<a target="_blank" href="https://github.com/xytosis"><div id="github" class="headerbutton"></div></a>
@@ -58,7 +76,7 @@
 	<div id="contactme">
 		<div id="contactwrapper">
 			<p id="contacttext">Like what you see?</p>
-			<a href="/contact"><div id="contactbutton">
+			<a href="/contact" style="text-decoration: none;"><div id="contactbutton">
 				<p id="cont">Contact Me</p>
 			</div></a>
 		</div>
@@ -72,9 +90,7 @@
 			<a href="#" class="headerlink">Resume</a>
 			<a href="/contact/" class="headerlink">Contact</a>
 		</div>
-		<div id="legal">
-			<p>© 2015 Martin Zhu. All rights reserved</p>
-		</div>
+		<p id = "legal">© 2015 Martin Zhu. All rights reserved</p>
 		<div id="bottombuttons">
 			<a target="_blank" href="https://github.com/xytosis"><div id="github2" class="headerbutton"></div></a>
 			<a target="_blank" href="https://medium.com/@mz"><div id="medium2" class="headerbutton"></div></a>
