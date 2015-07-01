@@ -45,31 +45,79 @@
 				</div>
 			</div>
 			<div id="headertext">
-				<p id="specialheadertext">A simple page dedicated to Martin.</p>
-				<p>About Me</p>
+				<p id="specialheadertext">My skills.</p>
+				<p>Resume</p>
 			</div>
 			<div id="headerbuttons">
 				<a target="_blank" href="https://github.com/xytosis"><div id="github" class="headerbutton"></div></a>
-				<a target="_blank" href="https://www.linkedin.com/pub/martin-zhu/88/345/941"><div id="linkedin" class="headerbutton"></div></a>
+				<a target="_blank" href="https://medium.com/@mz"><div id="medium" class="headerbutton"></div></a>
 				<a href="#"><div id="resume" class="headerbutton"></div></a>
 			</div>
 		</div>
 	</div>
-	<div id="space" style="margin-top: -50px"></div>
+	<a target="_blank" href="resume.pdf" style="text-decoration: none;"><div id="resumebutton">
+		<p id="insidetext">View PDF</p>
+	</div></a>
+	<div id="space" style="margin-top: 20px;"></div>
+	<style>
+		#resumebutton {
+			height: 60px;
+			width: 200px;
+			background-color: black;
+			position: absolute;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: 50px;
+			color: white;
+			text-align: center;
+			font-weight: bolder;
+			border-radius: 3px;
+			-o-transition:.2s;
+		  	-ms-transition:.2s;
+		  	-moz-transition:.2s;
+		  	-webkit-transition:.2s;
+		  	transition:.2s;
+		  	font-size: 20px;
+		}
+
+		#resumebutton:hover {
+			-webkit-filter: invert(1);
+   			filter: invert(1);
+		}
+	</style>
 	<div class="frontsection">
-		<p class="sectiontitle">Some Quirky Facts</p>
-		<p>My favorite game of all time is Ocarina of Time, and some other favorites include Mario Kart: Double Dash, Civilization V, Counter Strike: GO and Starcraft. I did Tae Kwon Do and Brazilian Jiu Jitsu for six and four years, respectively. I can play the saxophone. My favorite TV show is the Simpsons, and I have never watched an episode of Game of Thrones. I've read each Harry Potter book at least 5 times.</p>
+		<p class="sectiontitle">Technologies</p>
+		<ul style="columns: 2; -webkit-columns: 2; -moz-columns: 2;">
+			<li>Apache Spark</li>
+			<li>Python</li>
+			<li>Scala</li>
+			<li>Java</li>
+			<li>C</li>
+			<li>Go</li>
+			<li>Javascript/JQuery</li>
+			<li>HTML/CSS</li>
+			<li>Ajax</li>
+			<li>Apache Web Server</li>
+			<li>SQL/MySQL</li>
+			<li>Some PHP</li>
+			<li>Git</li>
+			<li>Linux/Windows/OS X</li>
+			<li>Virtual Box</li>
+			<li>Eclipse</li>
+		</ul>
 	</div>
 	<hr>
 	<div id="space" style="margin-top: -50px"></div>
 	<div class="frontsection">
-		<p class="sectiontitle">My Past</p>
-		<p>I was born in Kunming, Yunnan, China and immigrated to the US at around age two. After living in Wisconsin and Texas, our family finally settled down in New Hampshire. In middle school, I joined the MathCounts competition and did not do very well in 7th grade, the first year I competed. However, after spending the bulk of my summer preparing and studying from the Art of Problem Solving books, the next year I won 4th in my region and our team won first in the state, the first time our school had ever progressed so far.</p>
-		<p>In high school, I slowly became interested in computer science after taking AP Computer Science my sophomore year. This was the first time I had any direct exposure to Java programming and at first all the concepts of "inheritance", "abstract classes", "interfaces", "polymorphism" and other Java features confused me terribly. However, once I understood the basic idea behind object oriented programming I could suddenly connect my math problem solving abilities to coding.</p>
-		<p>Fast forwarding a few years to my first year at Brown, the first computer science course I took had us writing in Racket, a functional language. I had done a tiny amount of Lisp before, but it was a big initial conceptual leap to go from thinking in terms of imperative programming to thinking in terms of recursion,  lambda expressions and partial functions. Yet, once I made that switch, I could see that functional programming was basically a programatic way of writing a recurrence relation and that it was very close to mathematics. Imagine my joy when I learned Scala, a JVM language that blends both functional and imperative programming, can do everything Java can (it can use Java packages) and more (traits, anonymous function and pattern matching!), and has a much stronger type system than most other languages.</p>
-		<p>As of now, I am currently working on learning and contributing to Apache Spark, an open source Apache project dedicated to developing a current generation tool for Big Data analysis. It is a replacement for MapReduce and has many efficiencies built in that allows it to run much faster on a distributed system. I am also working on a Big Data related project that I hope will become a startup; this application will reduce the amount of friction that people have when accessing information on the Internet and bring huge amounts of data to a readily available and quickly accessible format.</p>
+		<p class="sectiontitle">Projects</p>
+		<ul>
+			<li><a href="/maps">Maps: An interactive map of Rhode Island</a></li>
+			<li><a href="/swipey">BDWS Card Swipe API: A general purpose card swiping, authentication and authorization platform</a></li>
+			<li><a href="/secure">Secure Remote Storage Application</a></li>
+			<li><a target="_blank" href="/soil/soil.pdf">AfSIS Competition: Predicting soil quality from satilite data</a></li>
+
+		</ul>
 	</div>
-	<div id="space" style="margin-top: -50px"></div>
 	</div>
 	<div id="contactme">
 		<div id="contactwrapper">
