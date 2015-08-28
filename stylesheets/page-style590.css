@@ -226,35 +226,35 @@ hr {
 }
 
 #project2 {
-	background-image: url("images/maps/maps1.png");
+	background-image: url("images/spark_logo.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #project3 {
-	background-image: url("images/swipey/swipe1.png");
+	background-image: url("images/maps/maps1.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #project4 {
-	background-image: url("images/secure/secure1.png");
+	background-image: url("images/swipey/swipe1.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #project5 {
-	background-image: url("images/africa_thumbnail.jpg");
+	background-image: url("images/secure/secure1.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
 }
 
 #project6 {
-	background-image: url("images/shell.jpg");
+	background-image: url("images/africa_thumbnail.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	display: inline-block;
