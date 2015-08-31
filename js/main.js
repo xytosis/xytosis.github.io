@@ -31,6 +31,15 @@ $(document).ready(function() {
 			$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='0')");
 		});
 
+		$("#resumebutton").hover(function(){
+			$(this).css("-webkit-filter", "invert(100%)");
+			$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='1')");
+		}, 
+		function(){
+			$(this).css("-webkit-filter", "invert(0%)");
+			$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='0')");
+		});
+
 		$("#contactbutton").hover(function(){
 			$(this).css("-webkit-filter", "invert(100%)");
 			$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='1')");
