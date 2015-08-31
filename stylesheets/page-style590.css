@@ -148,11 +148,6 @@ hr {
 	margin: 20px;
 }
 
-.headerbutton:hover {
-	-webkit-filter: invert(1);
-   filter: invert(1);
-}
-
 #space {
 	height: 100px;
 	width: 100%;
@@ -323,11 +318,6 @@ hr {
   	-webkit-transition:.2s;
   	transition:.2s;
   	font-size: 20px;
-}
-
-#contactbutton:hover {
-	-webkit-filter: invert(1);
-   filter: invert(1);
 }
 
 #bottomlinks {
