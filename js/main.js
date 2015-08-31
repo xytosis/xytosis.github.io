@@ -15,4 +15,30 @@ $(document).ready(function() {
 		
 	})
 
+
+	$(".headerbutton").hover(function(){
+		$(this).css("-webkit-filter", "invert(100%)");
+		$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='1')");
+	}, 
+	function(){
+		$(this).css("-webkit-filter", "invert(0%)");
+		$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='0')");
+	});
+
+	$("#contactbutton").hover(function(){
+		$(this).css("-webkit-filter", "invert(100%)");
+		$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='1')");
+	}, 
+	function(){
+		$(this).css("-webkit-filter", "invert(0%)");
+		$(this).css("filter", "progid:DXImageTransform.Microsoft.BasicImage(invert='0')");
+	});
+
+	$(".headerlink").hover(function(){
+		$(this).css("opacity", "0.8");
+	}, 
+	function(){
+		$(this).css("opacity", "1");
+	});
+
 });
