@@ -41,10 +41,6 @@ hr {
 	margin-left: 20px;
 }
 
-.headerlink:hover {
-	opacity: 0.8;
-}
-
 
 #headertext {
 	height: 100px;
@@ -122,11 +118,6 @@ hr {
 	border-radius: 50px;
 	display: inline-block;
 	margin: 20px;
-}
-
-.headerbutton:hover {
-	-webkit-filter: invert(1);
-   filter: invert(1);
 }
 
 #space {
@@ -301,11 +292,6 @@ hr {
   	-webkit-transition:.2s;
   	transition:.2s;
   	font-size: 20px;
-}
-
-#contactbutton:hover {
-	-webkit-filter: invert(1);
-   filter: invert(1);
 }
 
 #bottomlinks {
